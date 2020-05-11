@@ -19,10 +19,15 @@
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <!-- scripts -->
+  <script src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="../bundle.js"></script>
+  <script src="../app.js"></script>
 
 </head>
 
-<body id="page-top">
+<body id="page-top" onload="initViz();">
 
   <!-- Page Wrapper -->
   <div id="wrapper">
@@ -399,14 +404,14 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks</div>
+                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Popularity</div>
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">
-                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800" id="popularity-p"></div>
                         </div>
                         <div class="col">
                           <div class="progress progress-sm mr-2">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50"
+                            <div class="progress-bar bg-info" id="popularity-bar" role="progressbar" aria-valuenow="50"
                               aria-valuemin="0" aria-valuemax="100"></div>
                           </div>
                         </div>
@@ -420,14 +425,14 @@
               </div>
             </div>
 
-            <!-- Pending Requests Card Example -->
+            <!-- Popularity Card  -->
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-warning shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Pending Requests</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Placeholder</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800" id=""> ??? </div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -465,7 +470,12 @@
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-                  <div class='tableauPlaceholder' id='viz1588998301442' style='position: relative'><noscript><a
+
+                  <div id="vizContainer">
+                
+                  </div>
+
+                  <!-- <div class='tableauPlaceholder' id='viz1588998301442' style='position: relative'><noscript><a
                         href='#'><img alt=' '
                           src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ch&#47;ChrmngSpotifyDataApril-May2020&#47;Dashboard2&#47;1_rss.png'
                           style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
@@ -483,8 +493,18 @@
                       <param name='display_overlay' value='yes' />
                       <param name='display_count' value='yes' /></object></div>
                   <script
-                    type='text/javascript'>                    var divElement = document.getElementById('viz1588998301442'); var vizElement = divElement.getElementsByTagName('object')[0]; if (divElement.offsetWidth > 800) { vizElement.style.minWidth = '420px'; vizElement.style.maxWidth = '650px'; vizElement.style.width = '100%'; vizElement.style.minHeight = '587px'; vizElement.style.maxHeight = '887px'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; } else if (divElement.offsetWidth > 500) { vizElement.style.minWidth = '420px'; vizElement.style.maxWidth = '650px'; vizElement.style.width = '100%'; vizElement.style.minHeight = '587px'; vizElement.style.maxHeight = '887px'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; } else { vizElement.style.width = '100%'; vizElement.style.height = '977px'; } var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-                </div>
+                    type='text/javascript'>                   
+                     var divElement = document.getElementById('viz1588998301442'); var 
+                     vizElement = divElement.getElementsByTagName('object')[0]; if (divElement.offsetWidth > 800) 
+                     { vizElement.style.minWidth = '420px'; vizElement.style.maxWidth = '650px'; vizElement.style.width = '100%'; 
+                     vizElement.style.minHeight = '587px'; vizElement.style.maxHeight = '887px'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; }
+                      else if (divElement.offsetWidth > 500) { vizElement.style.minWidth = '420px'; vizElement.style.maxWidth = '650px'; vizElement.style.width = '100%'; 
+                      vizElement.style.minHeight = '587px'; vizElement.style.maxHeight = '887px'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; } 
+                      else { vizElement.style.width = '100%'; vizElement.style.height = '977px'; } var scriptElement = document.createElement('script'); s
+                      criptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);              
+                        </script>
+                 -->
+              </div>
               </div>
             </div>
 

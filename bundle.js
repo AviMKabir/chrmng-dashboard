@@ -49,6 +49,7 @@ function getPop() {
     console.log(popularityVar);
 
     document.getElementById('popularity-p').innerHTML = popularityVar;
+    document.getElementById('popularity-bar').style.width = popularityVar + '%';
 
 
   });
